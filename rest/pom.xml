@@ -32,30 +32,32 @@
       <artifactId>jersey-container-servlet</artifactId>
       <version>2.26</version>
     </dependency>
-	<!-- Jackson Start -->
-	<dependency>
-	    <groupId>org.glassfish.jersey.media</groupId>
-	    <artifactId>jersey-media-json-jackson</artifactId>
-	    <version>2.25.1</version>
-	</dependency>
-	<dependency>
-    	<groupId>org.glassfish.jersey.inject</groupId>
-    	<artifactId>jersey-hk2</artifactId>
-    	<version>2.26-b06</version>
-	</dependency>
-	<!-- Jackson Stop -->
-    <!-- Jersey Stop -->
+  	<!-- Jackson Start -->
+  	<dependency>
+  	    <groupId>org.glassfish.jersey.media</groupId>
+  	    <artifactId>jersey-media-json-jackson</artifactId>
+  	    <version>2.25.1</version>
+  	</dependency>
+  	<dependency>
+      	<groupId>org.glassfish.jersey.inject</groupId>
+      	<artifactId>jersey-hk2</artifactId>
+      	<version>2.26-b06</version>
+  	</dependency>
+  	<!-- Jackson Stop -->
+  <!-- Jersey Stop -->
   </dependencies>
   
-  <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <configuration>
-                    <webXml>WebContent\WEB-INF\web.xml</webXml>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+  <!-- This plugin will be used in case web.xml is placed somewhere else from specified place. -->
+  <!-- <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <configuration>
+                <webXml>WebContent\WEB-INF\web.xml</webXml>
+            </configuration>
+        </plugin>
+    </plugins>
+  </build> -->
+
 </project>
