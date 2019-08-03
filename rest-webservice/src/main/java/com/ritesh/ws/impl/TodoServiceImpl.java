@@ -55,6 +55,12 @@ public class TodoServiceImpl implements TodoServiceApi {
 		data01.remove(todo01);
 	}
 
+	@Override
+	public String testWebService()
+	{
+		return "green";
+	}
+
 	public List<Todo> getTodos() {
 		
 		Data data01 = getData();

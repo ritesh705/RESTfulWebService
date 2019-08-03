@@ -1,13 +1,22 @@
 package com.ritesh.ws;
 
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
 /**
  * Hello world!
  *
  */
-public class App 
+
+@Path("/home")
+public class App
 {
-    public static void main( String[] args )
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String home()
     {
-        System.out.println( "Hello World!" );
+        return "Home Page - Restful Web Service - Powered By Jersey :)";
     }
 }

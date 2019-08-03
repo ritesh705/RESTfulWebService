@@ -15,8 +15,14 @@ import javax.ws.rs.core.MediaType;
 import com.ritesh.ws.model.Todo;
 
 
-public interface TodoServiceApi {
-	
+public interface TodoServiceApi
+{
+
+	@GET
+	@Path("/test")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String testWebService();
+
 	@GET
 	@Path("/todos")
 	@Produces(MediaType.APPLICATION_JSON)
