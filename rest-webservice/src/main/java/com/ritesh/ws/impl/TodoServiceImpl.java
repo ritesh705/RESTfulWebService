@@ -10,37 +10,43 @@ import com.ritesh.ws.model.Data;
 import com.ritesh.ws.model.Todo;
 
 @Path("/TodoService")
-public class TodoServiceImpl implements TodoServiceApi {
-
+public class TodoServiceImpl implements TodoServiceApi
+{
 	Data data;
 	
-	public Data getData() {
-		if(data == null){
+	public Data getData()
+	{
+		if(data == null)
+		{
 			data = new Data();
 		}
 		return data;
 	}
 
-	public void setData(Data data) {
+	public void setData(Data data)
+	{
 		this.data = data;
 	}
 
 	@Override
-	public void create(Todo request){
+	public void create(Todo request)
+	{
 		Data data01 = getData();
 		List<Todo> todoList = data01.getTodoList();
 		todoList.add(request);
 	}
 	
 	@Override
-	public Todo read(String id){
+	public Todo read(String id)
+	{
 		Data data01 = getData();
 		Todo todo01 = data01.getTodo(id);
 		return todo01;
-		}
+	}
 
 	@Override
-	public void update(String id, Todo todo){
+	public void update(String id, Todo todo)
+	{
 		Data data01 = getData();
 		Todo todo01 = data01.getTodo(id);
 		todo01.setId(todo.getId());
@@ -49,30 +55,32 @@ public class TodoServiceImpl implements TodoServiceApi {
 	}
 
 	@Override
-	public void delete(String id){
+	public void delete(String id)
+	{
 		Data data01 = getData();
 		Todo todo01 = data01.getTodo(id);
 		data01.remove(todo01);
 	}
 
 	@Override
-	public String testWebService()
+	public String getSupportedOperations()
 	{
-		return "green";
+		return "{\"GET, POST, PUT, DELETE\"}";
 	}
 
-	public List<Todo> getTodos() {
-		
+	public List<Todo> getTodos()
+	{
 		Data data01 = getData();
 		List<Todo> todoList = data01.getTodoList();
 		List<Todo> todoListResponse = new ArrayList<Todo>();
-		for(Todo o : todoList){
+		for(Todo o : todoList)
+		{
 			Todo todo = new Todo();
 			todo.setId(o.getId());
 			todo.setIsCompleted(o.getIsCompleted());
 			todo.setName(o.getName());
 			todoListResponse.add(todo);
-			}
+		}
 		return todoListResponse;
 	}
 }

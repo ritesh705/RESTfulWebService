@@ -5,18 +5,15 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-/**
- * Hello world!
- *
- */
 
 @Path("/home")
 public class App
 {
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public String home()
     {
-        return "Home Page - Restful Web Service - Powered By Jersey :)";
+        String message = "{\"Message\": \"Home Page - Restful Web Service - Powered By Jersey :)\"}";
+        return message;
     }
 }
