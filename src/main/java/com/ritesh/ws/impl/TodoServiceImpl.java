@@ -1,15 +1,14 @@
 package com.ritesh.ws.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.ws.rs.Path;
-
 import com.ritesh.ws.api.TodoServiceApi;
 import com.ritesh.ws.model.Data;
 import com.ritesh.ws.model.Todo;
 
-@Path("/TodoService")
+import javax.ws.rs.Path;
+import java.util.ArrayList;
+import java.util.List;
+
+@Path("/todoservice")
 public class TodoServiceImpl implements TodoServiceApi
 {
 	Data data;
