@@ -39,8 +39,7 @@ public class TodoServiceImpl implements TodoServiceApi
 	public Todo read(String id)
 	{
 		Data data01 = getData();
-		Todo todo01 = data01.getTodo(id);
-		return todo01;
+		return data01.getTodo(id);
 	}
 
 	@Override
@@ -71,7 +70,7 @@ public class TodoServiceImpl implements TodoServiceApi
 	{
 		Data data01 = getData();
 		List<Todo> todoList = data01.getTodoList();
-		List<Todo> todoListResponse = new ArrayList<Todo>();
+		List<Todo> todoListResponse = new ArrayList<>();
 		for(Todo o : todoList)
 		{
 			Todo todo = new Todo();

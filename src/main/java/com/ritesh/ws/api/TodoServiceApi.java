@@ -1,11 +1,10 @@
 package com.ritesh.ws.api;
 
-import java.util.List;
+import com.ritesh.ws.model.Todo;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-
-import com.ritesh.ws.model.Todo;
+import java.util.List;
 
 
 public interface TodoServiceApi
@@ -40,5 +39,4 @@ public interface TodoServiceApi
 	@Path("/todos/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	void delete(@PathParam("id")String id);
-
 }
