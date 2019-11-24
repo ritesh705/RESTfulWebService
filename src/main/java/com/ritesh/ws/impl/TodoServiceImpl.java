@@ -28,11 +28,21 @@ public class TodoServiceImpl implements TodoServiceApi
 	}
 
 	@Override
-	public void create(Todo request)
+	public String create(Todo request)
 	{
+		String response = null;
 		Data data01 = getData();
 		List<Todo> todoList = data01.getTodoList();
-		todoList.add(request);
+		if(request != null)
+		{
+			todoList.add(request);
+			response = "Success";
+		}
+		else
+		{
+			response = "Request is null";
+		}
+		return response;
 	}
 	
 	@Override
@@ -43,13 +53,23 @@ public class TodoServiceImpl implements TodoServiceApi
 	}
 
 	@Override
-	public void update(String id, Todo todo)
+	public String update(String id, Todo todo)
 	{
+		String response = null;
 		Data data01 = getData();
 		Todo todo01 = data01.getTodo(id);
-		todo01.setId(todo.getId());
-		todo01.setIsCompleted(todo.getIsCompleted());
-		todo01.setName(todo.getName());
+		if(todo01 != null)
+		{
+			todo01.setId(todo.getId());
+			todo01.setIsCompleted(todo.getIsCompleted());
+			todo01.setName(todo.getName());
+			response = "Update is successful";
+		}
+		else
+		{
+			response = "Request is null";
+		}
+		return response;
 	}
 
 	@Override
