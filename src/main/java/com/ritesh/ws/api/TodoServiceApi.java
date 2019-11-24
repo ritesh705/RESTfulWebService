@@ -11,6 +11,7 @@ public interface TodoServiceApi
 {
 	@POST
 	@Path("/todos")
+	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	String create(Todo todo);
 
@@ -27,6 +28,7 @@ public interface TodoServiceApi
 
 	@PUT
 	@Path("/todos/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	String update(@PathParam("id")String id, Todo todo);
 
