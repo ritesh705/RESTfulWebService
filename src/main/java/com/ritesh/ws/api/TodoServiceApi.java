@@ -9,10 +9,15 @@ import java.util.List;
 
 public interface TodoServiceApi
 {
+	@POST
+	@Path("/todos")
+	@Consumes(MediaType.APPLICATION_JSON)
+	void create(Todo todo);
+
 	@GET
 	@Path("/todos")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Todo> getTodos();
+	List<Todo> getTodos();
 
 	@GET
 	@Path("/todos/{id}")
@@ -20,23 +25,18 @@ public interface TodoServiceApi
 	@Consumes(MediaType.APPLICATION_JSON)
 	Todo read(@PathParam("id") String id);
 
-	@POST
-	@Path("/todos")
-	@Consumes(MediaType.APPLICATION_JSON)
-	void create(Todo todo);
-
 	@PUT
 	@Path("/todos/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	void update(@PathParam("id")String id, Todo todo);
 
-	@OPTIONS
-	@Path("/todos")
-	@Produces(MediaType.APPLICATION_JSON)
-	public String getSupportedOperations();
-
 	@DELETE
 	@Path("/todos/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	void delete(@PathParam("id")String id);
+
+	@OPTIONS
+	@Path("/todos")
+	@Produces(MediaType.APPLICATION_JSON)
+	String getSupportedOperations();
 }
