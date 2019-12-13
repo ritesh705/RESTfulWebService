@@ -6,9 +6,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-
-public interface TodoServiceApi
-{
+public interface TodoServiceApi {
 	@POST
 	@Path("/todos")
 	@Produces(MediaType.APPLICATION_JSON)
