@@ -1,4 +1,4 @@
-package com.ritesh.ws;
+package com.ritesh.ds.ws;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

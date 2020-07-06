@@ -6,7 +6,7 @@
     <artifactId>restful-webservice</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>rest</name>
+    <name>restful-webservice</name>
     <url>www.github.com/ritesh705</url>
 
     <properties>
